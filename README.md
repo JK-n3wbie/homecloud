@@ -5,8 +5,7 @@
 # Adding things like nextcloud office support and trusted domains for DNS
 
 # The compose.yaml file is dependent on a .env file being in the same directory when 
-
-# MYSQL_PASSWORD=<SQLPASS>
+ MYSQL_PASSWORD=<SQLPASS>
  STORAGE_LOCATION=<STORAGELOCATION>
  DOMAIN_NAME=<HOSTNAME>
  LOCAL_IP=<LOCALIP>
