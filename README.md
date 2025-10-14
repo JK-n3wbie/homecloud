@@ -7,7 +7,7 @@
 # The compose.yaml file is dependent on a .env file being in the same directory when 
 
 # MYSQL_PASSWORD=<SQLPASS>
-# STORAGE_LOCATION=<STORAGELOCATION>
-# DOMAIN_NAME=<HOSTNAME>
-# LOCAL_IP=<LOCALIP>
-# 
+ STORAGE_LOCATION=<STORAGELOCATION>
+ DOMAIN_NAME=<HOSTNAME>
+ LOCAL_IP=<LOCALIP>
+
