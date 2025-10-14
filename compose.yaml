@@ -23,7 +23,6 @@ services:
       - nextcloud:/var/www/html
     environment:
       - VIRTUAL_HOST=${DOMAIN_NAME}
-      - NEXTCLOUD_TRUSTED_DOMAINS=${DOMAIN_NAME},${LOCAL_IP}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
