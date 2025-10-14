@@ -1,3 +1,4 @@
+
 services:
   pihole:
     container_name: pihole
@@ -10,7 +11,7 @@ services:
       - "8443:8443/tcp" #set to 8443, bc nextcloud is running on port 443
     environment:
       TZ: 'Europe/Copenhagen'
-      FTLCONF_webserver_api_password: 'make da strong pass my guy' # is used for singing in to the web app.
+      FTLCONF_webserver_api_password: '4Glemsommekatte.' # is used for singing in to the web app.
       FTLCONF_dns_listeningMode: 'all'
     volumes:
       - './etc-pihole:/etc/pihole' #reccomended/common place to store pihole stuff.
@@ -24,9 +25,9 @@ services:
       - proxy-tier
     restart: unless-stopped
 
-  networks:
-    proxy-tier:
-
+networks:
+  proxy-tier:
+    external: true
 
 
 
