@@ -36,7 +36,7 @@ services:
       - proxy-tier
       - default
     dns:
-      - 172.18.0.2 #her skal ip'en fra pihole stå
+      - ${DNS_IP}  #her skal ip'en fra pihole stå
       - 1.1.1.1 #i tilfælde af at pihole er nede, kan servicen stadig tilgå anden dns tjeneste
 
   cron:
