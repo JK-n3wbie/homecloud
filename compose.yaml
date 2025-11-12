@@ -36,8 +36,20 @@ services:
       - proxy-tier
       - default
     dns:
-      - ${DNS_IP}  #her skal ip'en fra pihole stå
+      - ${DNS_IP} #her skal ip'en fra pihole stå
       - 1.1.1.1 #i tilfælde af at pihole er nede, kan servicen stadig tilgå anden dns tjeneste
+
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    restart: always
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_HEADER=AuthorizationJwt
+      - VIRTUAL_HOST=office.${DOMAIN_NAME}
+    networks:
+      - proxy-tier
+      - default
 
   cron:
     image: nextcloud:apache
