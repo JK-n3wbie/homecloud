@@ -36,8 +36,25 @@ services:
       - proxy-tier
       - default
     dns:
-      - ${DNS_IP}  #her skal ip'en fra pihole stå
+      - ${DNS_IP} #her skal ip'en fra pihole stå
       - 1.1.1.1 #i tilfælde af at pihole er nede, kan servicen stadig tilgå anden dns tjeneste
+
+  collabora:
+    image: collabora/code
+    container_name: collabora
+    hostname: collabora
+    restart: always
+    environment:
+      - domain=${CB_DOMAIN}
+      - username=${CB_USER}
+      - password=${CB_PASS}
+      - extra_params=--o:ssl.enable=false
+    ports:
+      - 9980:9980
+    cap_add:
+      - MKNOD
+    networks:
+      - proxy-tier
 
   cron:
     image: nextcloud:apache
