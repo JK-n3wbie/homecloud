@@ -56,7 +56,7 @@ ensure_prereqs() {
 
 host_up() {
   # Hurtigt netværkstjek – ping 2 gange.
-  ping -c 2 -W 2 192.168.0.154 >/dev/null 2>&1
+  ping -c 2 -W 2 <ip_for_smb_share_host> >/dev/null 2>&1
 }
 
 is_mounted() {
