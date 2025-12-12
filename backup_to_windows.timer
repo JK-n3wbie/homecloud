@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer for backup til Windows-share
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+AccuracySec=5min
+RandomizedDelaySec=3min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
