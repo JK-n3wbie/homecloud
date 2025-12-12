@@ -1,0 +1,16 @@
+[Unit]
+Description=Backup til Windows-share via rsync
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/backup_to_windows.sh
+SuccessExitStatus=23
+
+# Logning (journald + vores egen log i scriptet)
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
